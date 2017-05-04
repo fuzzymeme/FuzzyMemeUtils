@@ -1,12 +1,11 @@
 package com.fuzzymeme.utils;
 
-
-public class FreqCount<T> {
+public class CounterMap<T> {
 	
 	private int count = 0;
 	private final T payload;
 	
-	public FreqCount(T payload){
+	public CounterMap(T payload){
 		this.payload = payload;
 	}
 	
