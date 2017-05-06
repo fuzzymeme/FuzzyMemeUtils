@@ -250,7 +250,7 @@ public class StringUtils {
 		return cleaned;
 	}
 	
-	// TODO Could you try relpaceAll("  ", " ");
+	// TODO Could you try repeatedly relpaceAll("  ", " ");
 	public static String minimiseSpaces(String string){
 
 		String newString = "";
