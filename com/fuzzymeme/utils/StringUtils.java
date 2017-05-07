@@ -33,12 +33,16 @@ public class StringUtils {
 
 		StringBuffer buffer = new StringBuffer();
 
+		int i = 0; 
 		for(String word: list){
-			buffer.append(word).append(separator);
+			buffer.append(word);
+			if(i < list.size() - 1) {
+				buffer.append(separator);
+			}
+			i++;
 		}
 		return buffer.toString().trim();
 	}
-	
 	
 	public static String captialiseFirstCharacter(String in){
 
@@ -51,7 +55,9 @@ public class StringUtils {
 	/**
 	 * Splits the string into component parts. The splits are made where-ever a separator is found. 
 	 * The array returned also includes the separators. For example the string " a + boo foo * c" with the
-	 * separators "+" and "*" would return {"a","+","boo foo","*","c"}
+	 * separators "+" and "*" would return {" a ","+"," boo foo ","*"," c"}.
+	 * Keeps spaces around returned words (if space is not a separator) and no spaces around the 
+	 * returned separators.
 	 * @param input
 	 * @param separators
 	 * @return
@@ -205,21 +211,7 @@ public class StringUtils {
 			}
 		}
 		return false;
-	}
-
-	public static String listToString(List<String> list, String separator){
-
-		if(list == null){
-			return "";  
-		}
-
-		StringBuffer buffer = new StringBuffer();
-
-		for(String word: list){
-			buffer.append(word).append(separator);
-		}
-		return buffer.toString().trim();
-	}
+	}	
 	
 	public static List<String> getValuesFromCSVString(String csvString){
 		
@@ -249,20 +241,9 @@ public class StringUtils {
 		}
 		return cleaned;
 	}
-	
-	// TODO Could you try repeatedly relpaceAll("  ", " ");
-	public static String minimiseSpaces(String string){
+		
+	public static String minimiseSpaces(String input){
 
-		String newString = "";
-		char lastC = 'x';
-		char currentC;
-		for(int i = 0; i < string.length(); i++){
-			currentC = string.charAt(i);
-			if(lastC != ' ' || currentC != ' '){
-				newString += currentC;
-			}
-			lastC = currentC;
-		}
-		return newString;
+		return repeatedlyReplace(input, "  ", " ");
 	}
 }
