@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 import org.junit.Before;
 
-public class TableTester {
+public class TableTests {
 		
 	private static Table table = new Table();
 	private final static TableRow expectedRowOne = new TableRow(new String[]{"a", "b", "c", "d"});
