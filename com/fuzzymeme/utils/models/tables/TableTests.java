@@ -14,7 +14,6 @@ public class TableTests {
 	private final static TableRow expectedRowOne = new TableRow(new String[]{"a", "b", "c", "d"});
 	private final static TableRow expectedRowTwo = new TableRow(new String[]{"e", "f", "g", "h"});
 
-	
 	@Before
 	public void setUp(){
 		table = new Table();

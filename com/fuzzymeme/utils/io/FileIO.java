@@ -52,12 +52,12 @@ public class FileIO {
 		}
 	}
 
-	public static void save(String fileName, String contents)
+	public static void save(String fileName, String contents) throws IOException
 	{
 		save(fileName, contents, false);
 	}
 
-	public static void save(String fileName, String contents, boolean append)
+	public static void save(String fileName, String contents, boolean append) throws IOException
 	{
 		try{
 			FileWriter fw = new FileWriter(fileName);
@@ -75,7 +75,7 @@ public class FileIO {
 		}
 		catch (IOException e){
 			System.err.println("Unable to save: " + fileName);            
-			e.printStackTrace();
+			throw e;
 		}
 	}
 	
@@ -105,17 +105,12 @@ public class FileIO {
 		return bytes;
 	}
 	
-	public static void saveBytes(String fileName, byte[] bytes)
+	public static void saveBytes(String fileName, byte[] bytes) throws Exception
 	{
 		FileOutputStream fos;
-		try {
-			fos = new FileOutputStream(fileName);
-			fos.write(bytes);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		fos = new FileOutputStream(fileName);
+		fos.write(bytes);
+		fos.close();
 	}
 
 }
