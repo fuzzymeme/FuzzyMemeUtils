@@ -35,7 +35,6 @@ public class FileIO {
 				ret = reader.read(data, charsRead, size - charsRead);
 				charsRead += ret;
 			}
-			//return new String(data).trim(); // returns from here if all well
 			return new String(data); // returns from here if all well
 		}
 		catch(IOException e){

@@ -9,7 +9,7 @@ import org.junit.Test;
 import com.fuzzymeme.utils.models.tables.Table;
 import com.fuzzymeme.utils.models.tables.TableRow;
 
-public class TableReaderTester {
+public class TableReaderTests {
 	
 	private final static TableRow exampleRowZero = new TableRow(new String[]{"a", "b", "c", "d", "e"});
 	private final static TableRow exampleRowOne = new TableRow(new String[]{"f", "g", "h", "i", "j"});
