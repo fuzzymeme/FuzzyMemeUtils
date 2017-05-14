@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// TODO Make generic
 public class Table {
 	
 	private List<String> headers = new ArrayList<String>();

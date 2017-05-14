@@ -3,6 +3,7 @@ package com.fuzzymeme.utils.parsers;
 import java.util.HashMap;
 import java.util.Map;
 
+// TODO make Generic, pass in a code to parse to the correct type. 
 public class MapParser {
 
 	public static Map<String, String> buildMapFromString(String stringToParse){

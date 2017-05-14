@@ -7,7 +7,6 @@ import java.util.Arrays;
  */
 public class TableRow {
 	
-	
 	private String[] items; 
 		
 	public TableRow(){}
