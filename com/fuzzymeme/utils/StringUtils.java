@@ -147,27 +147,6 @@ public class StringUtils {
 		}
 		return buffer.toString() + toPad;
 	}
-
-	/** Truncate the given text to the given width **/
-	// TODO Maybe better in ImageUtils
-	public static String trunc(FontMetrics fontMetrics, String message, int width, int paddingWidth){
-
-		// Truncate until it fits inside the box
-		String truncMessage = message;
-		int messageWidth = fontMetrics.stringWidth(truncMessage);
-		//System.out.println("Testing \"" + message + "\" for truncation, width is " + messageWidth + ", box width = " + width);
-		if(messageWidth < (width - (paddingWidth * 2))){
-			//System.out.println("Width is fine for \"" + message + "\" with truncation. Message width:" + messageWidth);
-			return message;
-		}
-		while(messageWidth >= (width - (paddingWidth * 2)) && truncMessage.length() > 0){
-			//System.out.println("Truncate from >" + truncMessage + "<");
-			truncMessage = truncMessage.substring(0, truncMessage.length() - 1);
-			//System.out.println("to >" + truncMessage + "<");
-			messageWidth = fontMetrics.stringWidth(truncMessage + "... ");
-		}		
-		return truncMessage + "... ";
-	}   
 	
 	/**
 	 * Create an indentation of a given number of spaces.
